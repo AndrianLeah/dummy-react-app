@@ -1,4 +1,4 @@
-import Radium from "radium";
+import Radium, { StyleRoot } from "radium";
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
@@ -43,14 +43,14 @@ class App extends Component {
       color: "white",
       font: "inherit",
       border: "1px solid #27ae60",
-      padding: "8px",
+      padding: "8px 25px 8px 25px",
       cursor: "pointer",
-      'border-radius': '3px',
-      ':hover': {
-        backgroundColor: '#2ecc71'
+      borderRadius: "3px",
+      ":hover": {
+        backgroundColor: "#2ecc71"
       },
-      ':focus': {
-        outline: '0'
+      ":focus": {
+        outline: "0"
       }
     };
 
@@ -74,9 +74,9 @@ class App extends Component {
 
       style.backgroundColor = "#c0392b";
       style.border = "1px solid #c0392b";
-      style[':hover'] =  {
-        backgroundColor: '#e74c3c'
-      }
+      style[":hover"] = {
+        backgroundColor: "#e74c3c"
+      };
     }
 
     const classes = [];
@@ -88,14 +88,16 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p className={classes.join(" ")}>This is really working!</p>
-        <button onClick={this.togglePersonsHandler} style={style}>
-          Toggle Persons
-        </button>
-        {persons}
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi, I'm a React App</h1>
+          <p className={classes.join(" ")}>This is really working!</p>
+          <button onClick={this.togglePersonsHandler} style={style}>
+            Toggle Persons
+          </button>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
