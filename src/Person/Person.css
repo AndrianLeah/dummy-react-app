@@ -1,9 +1,35 @@
 .Person {
-  width: 60%;
-  margin: 16px auto;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 2px 3px #cccccc;
-  padding: 16px;
+  width: 80%;
+  margin: 16px;
+  padding: 30px;
+  vertical-align: top;
+  display: inline-block;
+
   text-align: center;
+
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px #bdc3c7;
 }
 
+.Person input {
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+  border: 2px solid #bdc3c7;
+  color: #7f8c8d;
+  padding-left: 5px;
+}
+
+.Person input:focus {
+  border:2px solid #2ecc71;
+  outline: 0;
+  color: black;
+  transition: 0.5s;
+}
+
+@media (min-width: 200px) {
+  .Person {
+    width: 200px;
+  }
+}
