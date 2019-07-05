@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .red {
   color: #c0392b;
 }
@@ -10,7 +6,7 @@
   font-weight: bold;
 }
 
-.App button {
+.Cockpit button {
   background-color: #27ae60;
   color: white;
   font: inherit;
@@ -19,18 +15,18 @@
   cursor: pointer;
   border-radius: 3px;
 }
-.App button:hover {
+.Cockpit button:hover {
   background-color: #2ecc71;
 }
-.App button:focus {
+.Cockpit button:focus {
   outline: 0;
 }
 
-.App button.Red {
+.Cockpit button.Red {
   background-color: #c0392b;
   border: 1px solid #c0392b;
 }
 
-.App button.Red:hover {
+.Cockpit button.Red:hover {
   background-color: #e74c3c;
 }
