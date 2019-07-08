@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import classes from "./App.css";
 import Persons from "./../components/Persons/Persons";
 import Cockpit from "./../components/Cockpit/Cockpit";
+import withClass from "../hoc/withClass";
 
 class App extends Component {
   state = {
@@ -12,7 +13,8 @@ class App extends Component {
       { id: 3, name: "Stephanie", age: 26 }
     ],
     otherState: "some other value",
-    showPersons: false
+    showPersons: false,
+    changeCounter: 0
   };
 
   nameChangedHandler = (event, id) => {
@@ -26,7 +28,14 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({ persons: persons });
+    // setState is asynchronous so you need to use this
+    // when your state update depends on your old state
+    this.setState((prevState, props) => {
+      return {
+        persons: persons,
+        changeCounter: prevState.changeCounter + 1
+      };
+    });
   };
 
   deletePersonHandler = personIndex => {
@@ -53,16 +62,16 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
+      <Fragment>
         <Cockpit
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clicked={this.togglePersonsHandler}
         />
         {persons}
-      </div>
+      </Fragment>
     );
   }
 }
 
-export default App;
+export default withClass(App, classes.App);
