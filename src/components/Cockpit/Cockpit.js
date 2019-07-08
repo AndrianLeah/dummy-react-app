@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './Cockpit.css';
+import classes from "./Cockpit.css";
 
 const cockpit = props => {
   const assignedClasses = [];
@@ -10,7 +10,7 @@ const cockpit = props => {
   }
 
   if (props.persons.length <= 2) {
-    assignedClasses.push(classes.red); 
+    assignedClasses.push(classes.red);
   }
   if (props.persons.length <= 1) {
     assignedClasses.push(classes.bold);

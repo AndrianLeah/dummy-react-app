@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from "react";
-
-import classes from "./App.css";
-import Persons from "./../components/Persons/Persons";
-import Cockpit from "./../components/Cockpit/Cockpit";
 import withClass from "../hoc/withClass";
+import Cockpit from "./../components/Cockpit/Cockpit";
+import Persons from "./../components/Persons/Persons";
+import classes from "./App.css";
 
 class App extends Component {
   state = {
